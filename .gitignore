@@ -1,0 +1,11 @@
+bin/
+debug/
+obj/
+.vscode/
+cgems.pro
+cgems.pro.user
+cgems.pro.user.4.8-pre1
+cgems.pro.user.4.9-pre1
+cgems.pro.user.110b6ea
+cgems.vcxproj
+cgems.vcxproj.filters

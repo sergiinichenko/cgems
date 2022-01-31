@@ -1,0 +1,127 @@
+MEL_OUTPUTFILE 'MELOUT_v2-0' NCYCLE -1 
+MEL_RESTARTFILE 'suola_restart.rst' 
+PROGRAM MELCOR 
+EXEC_INPUT 
+EXEC_TITLE 'VERDON-1' 
+EXEC_CPULEFT 20.0 
+EXEC_CPULIM 1.0E5 
+EXEC_CYMESF 800 800 
+EXEC_TIME 5 
+	 	1 -10000.0 5.0E-3 1.0E-6 10000.0 100.0 10000.0 1.0E10 
+	 	2  0.0     0.5    1.0E-6  2000.0  20.0 1000.0  1.0E10 
+	 	3  10000.0 0.5    1.0E-6  1500.0  20.0 1500.0  1.0E10 
+	 	4  11500.0 0.5    1.0E-6  1000.0  10.0 1000.0  1.0E10 
+	 	5  15000.0 0.5    1.0E-6   500.0  5.0   500.0  1.0E10 
+EXEC_TEND     50200.00  
+!
+CF_INPUT 
+! 
+    CF_ID   'LIF_A'   701   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'LIF_B'   702   EQUALS    
+    CF_SAI  0.0             0.6700  
+! 
+    CF_ID   'LIF_C'   703   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'CSF_A'   711   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'CSF_B'   712   EQUALS    
+    CF_SAI  0.0            -2.6768  
+! 
+    CF_ID   'CSF_C'   713   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'CSI_A'   721   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'CSI_B'   722   EQUALS    
+    CF_SAI  0.0            -4.7738  
+! 
+    CF_ID   'CSI_C'   723   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'THF4_A'  731   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'THF4_B'  732   EQUALS    
+    CF_SAI  0.0            -0.7902  
+! 
+    CF_ID   'THF4_C'  733   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'LII_A'   741   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'LII_B'   742   EQUALS    
+    CF_SAI  0.0            -3.1498  
+! 
+    CF_ID   'LII_C'   743   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'UF4_A'   751   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'UF4_B'   752   EQUALS    
+    CF_SAI  0.0            -0.6880  
+! 
+    CF_ID   'UF4_C'   753   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'I_A'     761   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'I_B'     762   EQUALS    
+    CF_SAI  0.0            -3.1117  
+! 
+    CF_ID   'I_C'     763   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'LI2F2_A' 771   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'LI2F2_B' 772   EQUALS    
+    CF_SAI  0.0             0.0877  
+! 
+    CF_ID   'LI2F2_C' 773   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'LI3F3_A' 781   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'LI3F3_B' 782   EQUALS    
+    CF_SAI  0.0            -0.7766  
+! 
+    CF_ID   'LI3F3_C' 783   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'LI_A'    791   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'LI_B'    792   EQUALS    
+    CF_SAI  0.0            -4.8504  
+! 
+    CF_ID   'LI_C'    793   EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'THF3_A'  7101  EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'THF3_B'  7102  EQUALS    
+    CF_SAI  0.0            -1.8361  
+! 
+    CF_ID   'THF3_C'  7103  EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'UF3_A'   7111  EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+    CF_ID   'UF3_B'   7112  EQUALS    
+    CF_SAI  0.0            -5.4447  
+! 
+    CF_ID   'UF3_C'   7113  EQUALS    
+    CF_SAI  0.0             0.0000  
+! 
+END PROGRAM MELCOR

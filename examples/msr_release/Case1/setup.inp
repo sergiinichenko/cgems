@@ -1,0 +1,61 @@
+/ -------------- GEMS project file - as a source of TD data --------
+gems 	gemsproject/System-dat.lst
+
+
+/ ----------- Initialize melcor --------------------------------
+melcor     cMSR_Case1_BE.inp
+melgen     cMSR_Case1_BE.inp
+restart    suola_restart.rst
+meloutput  MELOUT_v2-0
+melinput   MEL_INPUT.inp
+melouttable Salt_masses.dat Time T P Cs I Li Th U F
+
+map CSI  CsI
+map CSF  CsF
+map LIF  LiF
+map LII  LiI
+map THF4 ThF4
+map THF3 ThF3
+map UF4  UF4
+map UF3  UF3
+map LI2F2 Li2F2
+map LI3F3 Li3F3
+map LI Li
+map Cs Cs
+map I I
+map I  I
+map Li Li
+map Th Th
+map U U
+map F F
+
+vtable LIF  700
+vtable CSF  710
+vtable CSI  720
+vtable THF4 730
+vtable LII  740
+vtable UF4  750
+vtable I    760
+vtable LI2F2 770
+vtable LI3F3 780
+vtable LI   790
+vtable THF3 7100
+vtable UF3  7110
+
+add Ar(g) 0.5
+/add F(g)  -0.4
+/add Ar(g) 50.0
+/scale 0.0001
+
+/ ow=o - overwrite, ow=e - extend, 
+run melgen ow=o
+run melcor ow=o
+
+/ ----------- Initialize CGEMS ---------------------------------
+timestep 200.0
+time     50000.0
+
+/ cgems runs melcor with the melinput file
+run cgems 
+
+/ ------------ end CGEMS ---------------------------------------

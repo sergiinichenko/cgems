@@ -1,0 +1,37 @@
+Project CaMgCO3  G  MySystem  0  0  1  1000  0
+P 100000
+T 1275K
+DComp Cs2F2(g) CsF(g) F(g) F2(g) Li(g) Li2F2(g) Li3F3(g) LiF(g) Th(g) ThF2(g) ThF3(g) ThF4(g) U(g) UF(g) UF2(g) UF3(g) UF4(g) UF5(g) UF6(g) CsF(l) LiF(l) ThF4(l) UF4(l) Cs(l) CsF(l) LiF(l) Th(l) ThF4(l) U(l) UF4(l) Cs CsF Li LiF Li3ThF7 LiTh2F9 LiTh4F17 LiThF5 Th ThF4 U U2F9 U4F17 UF3 UF4 UF5-a UF5-b UF6 
+DCode G G G G G G G G G G G G G G G G G G G M M M M O O O O O O O O O O O O O O O O O O O O O O O O O 
+
+Phase G gas_gen 
+Phase I LiThU-F 
+Phase I Cs(l) 
+Phase I CsF(l) 
+Phase I LiF(l) 
+Phase I Th(l) 
+Phase I ThF4(l) 
+Phase I U(l) 
+Phase I UF4(l) 
+Phase I Cs CsF 
+Phase I Li LiF 
+Phase I Li3ThF7 
+Phase I LiTh2F9 
+Phase I LiTh4F17 
+Phase I LiThF5 
+Phase I Th 
+Phase I ThF4 
+Phase I U 
+Phase I U2F9 
+Phase I U4F17 
+Phase I UF3 
+Phase I UF4 
+Phase I UF5-a 
+Phase I UF5-b 
+Phase I UF6 
+PhCode g l l l l l l l l s s s s s s s s s s s s s s s s s s 
+
+Conc   0.0001  0.0001   1.0    0.1          0.0          1.0
+Phase I  CaCO3-MgCO3    CaCO3  CaMgCO3-Ant  CaMgCO3-Ord  MgCO3
+Phase G  gas_gen CO2  O2
+

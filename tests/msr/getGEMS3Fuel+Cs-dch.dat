@@ -1,0 +1,516 @@
+#  GEMS3K v.3.4.1 c.175a3e2 
+# File: /home/nichenko_s/Development/getGEMS3/standalone/cgems/msr/getGEMS3Fuel+Cs-dch.dat
+# Comments can be marked with # $ ; as the first character in the line
+# DCH text input file (should be read before IPM and DBR files)
+
+## (1) Dimensions for memory allocation
+# nIC: Number of Independent Components (usually chemical elements and charge)
+<nIC>  5
+# nDC: Number of Dependent Components (chemical species made of Independent Components)
+<nDC>  48
+# nPH: Number of phases (into which Dependent Components are grouped)
+<nPH>  27
+# nPS: Number of phases-solutions (multicomponent phases) <= nPH
+<nPS>  2
+# nDCs: Number of Dependent Components in phases-solutions <= nDC
+<nDCs>  23
+
+## (2) Dimensions for DBR node recipe (memory allocation)
+# nICb: Number of ICs kept in the DBR file and DATABR memory structure (<= nIC)
+<nICb>  5
+# nDCb: Number of DCs kept in the DBR file and DATABR memory structure (<=nDC)
+<nDCb>  48
+# nPHb: Number of phases kept in the DBR file and DATABR structure (<=nPH)
+<nPHb>  27
+# nPSb: Number of phases-solutions kept in the DBR file and DATABR structure (<=nPS)
+<nPSb>  2
+
+## (3) Dimensions for thermodynamic data arrays
+# nTp: Number of temperature grid points in lookup arrays for data interpolation, >=1
+<nTp>  1
+# nPp: Number of pressure grid points in lookup arrays for data interpolation, >=1
+<nPp>  1
+# iGrd: Flag for allocation of array of diffusition coefficients in DATACH structure (DCH file)
+<iGrd>  0
+# fAalp: Flag for keeping specific surface areas of phases in DATABR structure (1) or ignoring them (0)
+<fAalp>  1
+# mLook: Lookup mode: 0 interpolation over nTp*nPp grid; 1 data for T,P pairs, no interpolation
+<mLook>  0
+
+<END_DIM>
+
+## (4) DBR node recipe connection index lists
+# xIC: DATACH access index list for ICs kept in the DATABR structure and in DBR files [nICb]
+<xic>
+0 1 2 3 4 
+# xDC: DATACH access index list of DCs kept in the DATABR  structure and in DBR files [nDCb]
+<xdc>
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+40 41 42 43 44 45 46 47 
+# xPH: DATACH access index list for Phases kept in the DATABR structure and in DBR files [nPHb]
+<xph>
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 
+
+## (5) Independent Components and their properties
+# ICNL: List of Independent Component names (<=4 characters per name) [nIC]
+<ICNL>
+'Cs' 'F' 'Li' 'Th' 'U' 
+# ccIC: Class codes of ICs (Independent Components) [nIC]
+<ccIC>
+'e' 'e' 'e' 'e' 'e' 
+# ICmm: Atomic (molar) masses of ICs,  kg/mol [nIC]
+<ICmm>
+0.132905395507812 0.0189983997344971 0.00694099998474121 0.232038101196289 0.238028900146484 
+
+## (6) Dependent Components and their codes
+# DCNL: Name list of Dependent Components (<=16 characters per name) [nDC]
+<DCNL>
+'Cs2F2(g)' 'CsF(g)' 'F(g)' 'F2(g)' 'Li(g)' 'Li2F2(g)' 'Li3F3(g)' 'LiF(g)' 'Th(g)' 'ThF2(g)' 'ThF3(g)' 'ThF4(g)' 'U(g)' 'UF(g)' 'UF2(g)' 'UF3(g)' 'UF4(g)' 'UF5(g)' 'UF6(g)' 'CsF(l)' 'LiF(l)' 'ThF4(l)' 'UF4(l)' 'Cs(l)' 'CsF(l)' 'LiF(l)' 'Th(l)' 'ThF4(l)' 'U(l)' 'UF4(l)' 'Cs' 'CsF' 'Li' 'LiF' 'Li3ThF7' 'LiTh2F9' 'LiTh4F17' 'LiThF5' 'Th' 'ThF4' 
+'U' 'U2F9' 'U4F17' 'UF3' 'UF4' 'UF5-a' 'UF5-b' 'UF6' 
+# ccDC: Class codes of DCs (Dependent Components) [nDC]
+<ccDC>
+'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'G' 'M' 'M' 'M' 'M' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 
+'O' 'O' 'O' 'O' 'O' 'O' 'O' 'O' 
+
+# DCmm: Molar masses of DCs, kg/mol [nDC]
+<DCmm>
+0.303807590484619 0.15190379524231 0.0189983997344971 0.0379967994689941 0.00694099998474121 0.0518787994384766 0.0778181991577148 0.0259393997192383 0.232038101196289 0.270034900665283 0.28903330039978 0.308031700134277 0.238028900146484 0.257027299880981 0.276025699615479 0.295024099349976 0.314022499084473 0.33302089881897 0.352019298553467 0.15190379524231 0.0259393997192383 0.308031700134277 0.314022499084473 0.132905395507812 0.15190379524231 0.0259393997192383 0.232038101196289 0.308031700134277 0.238028900146484 0.314022499084473 0.132905395507812 0.15190379524231 0.00694099998474121 0.0259393997192383 0.385849899291992 0.642002799987793 1.25806620025635 0.333971099853516 0.232038101196289 0.308031700134277 
+0.238028900146484 0.647043397903442 1.27508839607239 0.295024099349976 0.314022499084473 0.33302089881897 0.33302089881897 0.352019298553467 
+
+## (7) Phases and their codes
+# PHNL: List of Phase names (<=16 characters per name) [nPH]
+<PHNL>
+'gas_gen' 'LiThU-F' 'Cs(l)' 'CsF(l)' 'LiF(l)' 'Th(l)' 'ThF4(l)' 'U(l)' 'UF4(l)' 'Cs' 'CsF' 'Li' 'LiF' 'Li3ThF7' 'LiTh2F9' 'LiTh4F17' 'LiThF5' 'Th' 'ThF4' 'U' 'U2F9' 'U4F17' 'UF3' 'UF4' 'UF5-a' 'UF5-b' 'UF6' 
+# ccPH: Codes of phase aggregate state [nPH]
+<ccPH>
+'g' 'l' 'l' 'l' 'l' 'l' 'l' 'l' 'l' 's' 's' 's' 's' 's' 's' 's' 's' 's' 's' 's' 's' 's' 's' 's' 's' 's' 's' 
+# nDCinPH: Number of DCs included in each phase [nPH]
+<nDCinPH>
+19 4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+
+# (8) Data for Dependent Components
+# A: Stoichiometry matrix A (expanded formulae) for DCs [nDC*nIC]
+<A>
+2 2 0 0 0 
+1 1 0 0 0 
+0 1 0 0 0 
+0 2 0 0 0 
+0 0 1 0 0 
+0 2 2 0 0 
+0 3 3 0 0 
+0 1 1 0 0 
+0 0 0 1 0 
+0 2 0 1 0 
+0 3 0 1 0 
+0 4 0 1 0 
+0 0 0 0 1 
+0 1 0 0 1 
+0 2 0 0 1 
+0 3 0 0 1 
+0 4 0 0 1 
+0 5 0 0 1 
+0 6 0 0 1 
+1 1 0 0 0 
+0 1 1 0 0 
+0 4 0 1 0 
+0 4 0 0 1 
+1 0 0 0 0 
+1 1 0 0 0 
+0 1 1 0 0 
+0 0 0 1 0 
+0 4 0 1 0 
+0 0 0 0 1 
+0 4 0 0 1 
+1 0 0 0 0 
+1 1 0 0 0 
+0 0 1 0 0 
+0 1 1 0 0 
+0 7 3 1 0 
+0 9 1 2 0 
+0 17 1 4 0 
+0 5 1 1 0 
+0 0 0 1 0 
+0 4 0 1 0 
+0 0 0 0 1 
+0 9 0 0 2 
+0 17 0 0 4 
+0 3 0 0 1 
+0 4 0 0 1 
+0 5 0 0 1 
+0 5 0 0 1 
+0 6 0 0 1 
+
+## (9) Thermodynamic data for Dependent Components
+# Ttol: Tolerance for the temperature interpolation, K
+<Ttol>  1
+# TKval: Temperature values, K for lookup arrays of thermodynamic data [nTp]
+<TKval>
+1300.15 
+# Psat: Pressure Pa at saturated H2O vapour at given temperature [nTp]
+<Psat>
+1e-05 
+
+# Ptol: Tolerance for the pressure interpolation, Pa
+<Ptol>  50000
+# Pval: Pressure values, Pa for lookup arrays of thermodynamic data [nPp]
+<Pval>
+100000 
+
+# V0: Look-up array for DC (standard) molar volumes, J/Pa [nDC*nPp*nTp]
+<V0>
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0.02478919921875 
+0 
+0 
+9.5600004196167e-05 
+9.5600004196167e-05 
+6.8899998664856e-05 
+0 
+0 
+1.98000001907349e-05 
+9.5600004196167e-05 
+1.37600004673004e-05 
+9.5600004196167e-05 
+0 
+0 
+4.96000003814697e-05 
+0 
+0 
+0 
+0 
+0 
+1.98000001907349e-05 
+4.90000009536743e-05 
+1.24600005149841e-05 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+
+# G0: Look-up array for DC molar Gibbs energy function g(T,P), J/mol [nDC*nPp*nTp]
+<G0>
+-1320483.2237863 
+-650738.61890428 
+-116784.77899252 
+-234448.467831 
+-31755.180326848 
+-1264955.1965514 
+-1925651.8980065 
+-595834.58529979 
+350063.6292095 
+-1009480.5038937 
+-1723706.1092282 
+-2161254.4506475 
+266532.37627065 
+-367572.12402655 
+-930170.66649862 
+-1484038.7811095 
+-2035404.6118804 
+-2370836.3281119 
+-2503318.9309528 
+-684131.30918314 
+-674503.48895647 
+-2254062.7351746 
+-2088279.8721645 
+-120819.81318314 
+-684131.30918314 
+-674503.48895647 
+-79441.217401127 
+-2254062.7351746 
+-71892.156020035 
+-2088279.8721645 
+-118557.34644496 
+-677885.69746911 
+-20200.819214469 
+-670289.00992606 
+-4286126.4158639 
+-5198541.4697824 
+-9717146.0856906 
+-2939027.4421173 
+-86341.843599514 
+-2256572.9319871 
+-80833.352661462 
+-4385253.9140033 
+-8569179.5303331 
+-1649667.0568653 
+-2088195.976063 
+-2297090.9566622 
+-2278857.4808522 
+-2537258.089591 
+
+# H0: Look-up array for DC molar enthalpy h(T,P), J/mol [nDC*nPp*nTp]
+<H0>
+-809365.31618289 
+-318845.488250017 
+101054.970095438 
+35895.4711196123 
+180127.571296692 
+-857663.980218998 
+-1401077.41263526 
+-304098.713721739 
+627243.587777973 
+-594222.592968233 
+-1240265.51664437 
+-1643818.65855742 
+557238.336251862 
+-5675.36649690602 
+-476763.22368957 
+-983019.75964948 
+-1498167.32727065 
+-1820126.55169495 
+-1999158.42747197 
+-464012.882446289 
+-534339.635345459 
+-1933314 
+-1739568.51449585 
+33284.2527748451 
+-464012.882446289 
+-534339.635345459 
+56786.4328943973 
+-1933314 
+47833.1861958112 
+-1739568.51449585 
+37258.2014906524 
+-477080.002914649 
+-169451.927458169 
+-559155.72861687 
+-3651283.55214395 
+-4515227.50989724 
+-8444647.34998338 
+-2530199.10663499 
+37976.4328943973 
+-1971986.01278858 
+37479.0585344686 
+-3733051.6788983 
+-7300160.69644708 
+-1396309.74182711 
+-1784974.0810392 
+-1926366.28141912 
+-1934266.28141912 
+-1838608.81274652 
+
+# S0: Look-up array for DC absolute entropy S(T,P), J/K/mol [nDC*nPp*nTp] 
+<S0>
+478.716067657077 
+298.069856966293 
+190.801805636285 
+254.43685398592 
+169.390255492228 
+372.613645703875 
+492.495564408313 
+254.060746177586 
+225.06951377995 
+377.775039385585 
+453.469190089676 
+502.868773528344 
+235.106018696828 
+312.930359981267 
+406.750299156691 
+466.622425458606 
+519.035507853918 
+572.882359108346 
+592.754869683448 
+212.099350650141 
+137.480337788521 
+351.588492856502 
+372.728809703735 
+138.072831180137 
+212.099350650141 
+137.480337788521 
+117.122689952277 
+351.588492856502 
+103.597640613249 
+372.728809703735 
+139.36688249861 
+197.245116767591 
+-108.372971725585 
+115.152473848348 
+682.194770008814 
+765.014233031133 
+1427.95532709535 
+449.008642741083 
+107.962690104865 
+323.673557483017 
+102.501722993836 
+733.928073764559 
+1417.38759672808 
+276.136619230983 
+337.74045234316 
+412.911700471898 
+392.811694368382 
+688.384969528355 
+
+# Cp0: Look-up array for DC heat capacity Cp(T,P), J/K/mol [nDC*nPp*nTp]
+<Cp0>
+82.953407094647 
+38.2966770711447 
+21.078701779483 
+37.8754752191569 
+20.7859992980957 
+81.8232758629293 
+130.744577532742 
+37.5509890142557 
+35.1829586062053 
+57.8422781809167 
+82.5286452701756 
+107.086941770687 
+27.0025920548912 
+29.1512000440142 
+64.7431635567766 
+85.1035646132662 
+113.184370593596 
+135.549739675363 
+151.086997751039 
+70.5599975585938 
+64.1829986572266 
+170 
+174.740005493164 
+31.1834089691378 
+70.5599975585938 
+64.1829986572266 
+44.5499942520578 
+170 
+42.9280014038086 
+174.740005493164 
+37.6025806760517 
+108.629720025426 
+-905.166527419583 
+80.495133490123 
+327.405595095796 
+329.656623836174 
+594.282245615891 
+197.343795265808 
+44.5499942520578 
+132.310220015742 
+38.2000007629395 
+312.750021578815 
+608.559310272137 
+107.301363138923 
+142.728867783514 
+164.150356274305 
+164.150356274305 
+550.257431568205 
+
+# A0: reserved: Look-up array for DC Helmholtz energy function, J/mol [nDC*nPp*nTp]
+<A0>
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+
+# U0: reserved: Look-up array for DC internal energy function, J/mol [nDC*nPp*nTp]
+<U0>
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+
+# End of file
